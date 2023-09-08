@@ -29,4 +29,20 @@ public class UserController {
     public Optional<UserModel> getUserById(@PathVariable Long id){
         return this.userService.getById(id);
     }
+
+    @PutMapping(path = "/{id}")
+    public UserModel updateUserById(@RequestBody UserModel request,@PathVariable Long id){
+        return this.userService.updateById(request,id);
+    }
+
+    @DeleteMapping(path="/{id}")
+    public String deleteById(@PathVariable("id") Long id){
+        boolean ok = this.userService.deleteById(id);
+        if (ok){
+            return "User deleted successful";
+        }
+        else {
+            return "Error";
+        }
+    }
 }
