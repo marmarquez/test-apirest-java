@@ -1,7 +1,7 @@
 package com.apirestdemo.test.controllers;
 
 import com.apirestdemo.test.models.UserModel;
-import com.apirestdemo.test.models.NamesOnly;
+import com.apirestdemo.test.repositories.NamesOnly;
 import com.apirestdemo.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 

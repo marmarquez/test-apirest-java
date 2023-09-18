@@ -2,7 +2,7 @@ package com.apirestdemo.test.services;
 
 import com.apirestdemo.test.models.UserModel;
 import com.apirestdemo.test.repositories.IUSerRepository;
-import com.apirestdemo.test.models.NamesOnly;
+import com.apirestdemo.test.repositories.NamesOnly;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
