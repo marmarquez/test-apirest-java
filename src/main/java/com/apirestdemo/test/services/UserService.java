@@ -2,6 +2,7 @@ package com.apirestdemo.test.services;
 
 import com.apirestdemo.test.models.UserModel;
 import com.apirestdemo.test.repositories.IUSerRepository;
+import com.apirestdemo.test.models.NamesOnly;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,8 @@ public class UserService {
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
 
+        userRepository.save(user);
+
         return user;
     }
 
@@ -42,5 +45,9 @@ public class UserService {
         }catch(Exception e){
             return false;
         }
+    }
+
+    public ArrayList<NamesOnly> getNombres(){
+        return  (ArrayList<NamesOnly>) userRepository.nombres();
     }
 }

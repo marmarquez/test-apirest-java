@@ -1,8 +1,10 @@
 package com.apirestdemo.test.controllers;
 
 import com.apirestdemo.test.models.UserModel;
+import com.apirestdemo.test.models.NamesOnly;
 import com.apirestdemo.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -14,7 +16,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
     @GetMapping
     public ArrayList<UserModel> getUsers(){
         return this.userService.getUsers();
@@ -44,5 +45,9 @@ public class UserController {
         else {
             return "Error";
         }
+    }
+    @GetMapping(path="/nombres")
+    public ArrayList<NamesOnly> getUsersNombres(){
+        return this.userService.getNombres();
     }
 }
